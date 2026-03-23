@@ -1,10 +1,11 @@
 import Link from 'next/link';
-import { getApiUrl } from '../config';
 
 export default async function Page() {
+  console.log('API URL:', process.env.NEXT_PUBLIC_API_URL);
+  
   let products = [];
   try {
-    const res = await fetch(`${getApiUrl()}/api/products`, { cache: 'no-store' });
+    const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/products`, { cache: 'no-store' });
     if (res.ok) {
       products = await res.json();
     }
