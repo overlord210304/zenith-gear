@@ -7,6 +7,9 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
+// Watchdog Route
+app.get('/', (req, res) => res.status(200).send('API is Online'));
+
 // Main products route
 app.get('/api/products', async (req, res) => {
   try {
