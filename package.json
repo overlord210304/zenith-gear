@@ -7,7 +7,7 @@
     "lint": "turbo run lint",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
     "check-types": "turbo run check-types",
-    "api:start": "npm start --prefix apps/api"
+    "api:start": "node apps/api/index.js"
   },
   "devDependencies": {
     "prettier": "^3.7.4",
