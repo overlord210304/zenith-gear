@@ -1,4 +1,10 @@
 require('dotenv').config();
+
+if (!process.env.MONGO_URI) {
+  console.error('FATAL ERROR: MONGO_URI is not defined in Environment Variables!');
+  process.exit(1);
+}
+
 const express = require('express');
 const cors = require('cors');
 const { connectDB, Product } = require('./database.js'); 
