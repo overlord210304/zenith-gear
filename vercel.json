@@ -1,4 +1,10 @@
 {
-  "builds": [{ "src": "apps/web/package.json", "use": "@vercel/next" }],
-  "routes": [{ "src": "/(.*)", "dest": "apps/web/$1" }]
+  "version": 2,
+  "public": false,
+  "rewrites": [
+    { "source": "/(.*)", "destination": "/apps/web/$1" }
+  ],
+  "redirects": [
+    { "source": "/", "destination": "/apps/web", "permanent": true }
+  ]
 }
