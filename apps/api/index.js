@@ -10,7 +10,7 @@ const cors = require('cors');
 const { connectDB, Product } = require('./database.js'); 
 
 const app = express();
-app.use(cors());
+app.use(cors({ origin: '*' }));
 app.use(express.json());
 
 // Watchdog Route
